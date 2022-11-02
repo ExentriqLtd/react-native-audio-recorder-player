@@ -398,6 +398,15 @@ class AudioRecorderPlayer {
   seekToPlayer = async (time: number): Promise<string> => {
     return RNAudioRecorderPlayer.seekToPlayer(time);
   };
+  
+  /**
+     * get duration from path with param.
+     * @param {string} uri audio uri.
+     * @returns {Promise<string>}
+     */
+  getDuration = async (uri: number): Promise<string> => {
+    return RNAudioRecorderPlayer.getDuration(uri);
+  };
 
   /**
    * Set volume.

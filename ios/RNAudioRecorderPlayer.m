@@ -38,6 +38,10 @@ RCT_EXTERN_METHOD(startPlayer:(NSString*)path
 RCT_EXTERN_METHOD(resumePlayer:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject);
 
+RCT_EXTERN_METHOD(getDuration:(NSString*)path
+                resolve:(RCTPromiseResolveBlock)resolve
+                rejecter:(RCTPromiseRejectBlock)  reject);
+                
 RCT_EXTERN_METHOD(seekToPlayer:(nonnull double*) time
                   resolve:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject);

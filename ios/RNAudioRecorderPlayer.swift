@@ -408,6 +408,23 @@ class RNAudioRecorderPlayer: RCTEventEmitter, AVAudioRecorderDelegate {
         resolve("Resumed!")
     }
 
+    @objc(getDuration:resolve:rejecter:)
+    public func getDuration(
+        path: String,
+        resolve: @escaping RCTPromiseResolveBlock,
+        rejecter reject: @escaping RCTPromiseRejectBlock
+    ) -> Void {
+        let serverURL = NSURL(string: path)!
+        if let asset = AVAsset(url: serverURL as URL) as? AVAsset {
+        let duration = asset.duration
+        let durationTime = CMTimeGetSeconds(duration)
+        let minutes = durationTime/60
+        let seconds = durationTime.truncatingRemainder(dividingBy: 60)
+        let audioDuration = "\(minutes):\(seconds)"
+        resolve(audioDuration);
+        }
+    }
+
     @objc(seekToPlayer:resolve:rejecter:)
     public func seekToPlayer(
         time: Double,
