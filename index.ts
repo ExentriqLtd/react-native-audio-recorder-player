@@ -404,7 +404,7 @@ class AudioRecorderPlayer {
      * @param {string} uri audio uri.
      * @returns {Promise<string>}
      */
-  getDuration = async (uri: number): Promise<string> => {
+  getDuration = async (uri: string): Promise<string> => {
     return RNAudioRecorderPlayer.getDuration(uri);
   };
 
