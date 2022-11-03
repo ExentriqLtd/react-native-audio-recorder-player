@@ -399,6 +399,7 @@ class AudioRecorderPlayer {
   };
   
   /**
+   * TODO:: da fare per android
      * get duration from path with param.
      * @param {string} uri audio uri.
      * @returns {Promise<string>}
